@@ -1,0 +1,16 @@
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\OnlineCommerce_Desktop.exe.config
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\OnlineCommerce_Desktop.exe
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\OnlineCommerce_Desktop.pdb
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.Properties.Resources.resources
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.exe
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.pdb
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\EntityFramework.dll
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\EntityFramework.xml
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.csproj.CopyComplete
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.CategoryForm.resources
+C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.ProductForm.resources
