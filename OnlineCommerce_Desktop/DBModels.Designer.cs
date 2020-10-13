@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\ASUS\source\repos\OnlineCommerce_Desktop\OnlineCommerce_Desktop\DBModels.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\DBModels.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -19,6 +19,7 @@ namespace OnlineCommerce_Desktop
         {
             this.Admins = new HashSet<Admins>();
             this.Customers = new HashSet<Customers>();
+            this.Companies1 = new HashSet<Companies>();
         }
     
         public int ID { get; set; }
@@ -28,9 +29,10 @@ namespace OnlineCommerce_Desktop
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Admins> Admins { get; set; }
-        public virtual Companies Companies { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customers> Customers { get; set; }
         public virtual AccountTypes AccountTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Companies> Companies1 { get; set; }
     }
 }

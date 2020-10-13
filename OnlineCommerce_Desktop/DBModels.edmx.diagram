@@ -6,22 +6,22 @@
     <edmx:Diagrams>
       <Diagram DiagramId="581e393c5cda4d60ba63d78d16a10a55" Name="Diagram1">
         <EntityTypeShape EntityType="OnlineCommerceModel.Accounts" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineCommerceModel.AccountTypes" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineCommerceModel.Admins" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.AccountTypes" Width="1.5" PointX="0.625" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Admins" Width="1.5" PointX="4.375" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="OnlineCommerceModel.Categories" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineCommerceModel.Companies" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Companies" Width="1.5" PointX="3.875" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="OnlineCommerceModel.Customers" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineCommerceModel.Orders" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineCommerceModel.Products" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OnlineCommerceModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Orders" Width="1.5" PointX="9.625" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.Products" Width="1.5" PointX="6.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineCommerceModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Admins_Accounts" ManuallyRouted="false" />
-        <AssociationConnector Association="OnlineCommerceModel.FK_Companies_Accounts" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Customers_Accounts" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Products_Categories" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Products_Companies" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Orders_Customers" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Orders_Products" ManuallyRouted="false" />
         <AssociationConnector Association="OnlineCommerceModel.FK_Accounts_AccountTypes" />
+        <AssociationConnector Association="OnlineCommerceModel.FK_Companies_Accounts1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

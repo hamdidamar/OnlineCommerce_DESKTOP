@@ -119,15 +119,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Companies_Accounts">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
+        <Association Name="FK_Companies_Accounts1">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
+          <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Accounts">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Companies">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="AccountID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -179,7 +179,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Products_Companies">
+        <Association Name="FK_Products_Companies1">
           <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
@@ -209,7 +209,7 @@
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Admins" EntitySet="Admins" />
           </AssociationSet>
-          <AssociationSet Name="FK_Companies_Accounts" Association="Self.FK_Companies_Accounts">
+          <AssociationSet Name="FK_Companies_Accounts1" Association="Self.FK_Companies_Accounts1">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Companies" EntitySet="Companies" />
           </AssociationSet>
@@ -229,7 +229,7 @@
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_Products_Companies" Association="Self.FK_Products_Companies">
+          <AssociationSet Name="FK_Products_Companies1" Association="Self.FK_Products_Companies1">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
@@ -247,9 +247,9 @@
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AccountTypeID" Type="Int32" />
           <NavigationProperty Name="Admins" Relationship="Self.FK_Admins_Accounts" FromRole="Accounts" ToRole="Admins" />
-          <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_Accounts" FromRole="Accounts" ToRole="Companies" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Accounts" FromRole="Accounts" ToRole="Customers" />
           <NavigationProperty Name="AccountTypes" Relationship="OnlineCommerceModel.FK_Accounts_AccountTypes" FromRole="Accounts" ToRole="AccountTypes" />
+          <NavigationProperty Name="Companies1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Accounts" ToRole="Companies" />
         </EntityType>
         <EntityType Name="AccountTypes">
           <Key>
@@ -290,8 +290,8 @@
           <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AccountID" Type="Int32" />
-          <NavigationProperty Name="Accounts" Relationship="Self.FK_Companies_Accounts" FromRole="Companies" ToRole="Accounts" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Companies" FromRole="Companies" ToRole="Products" />
+          <NavigationProperty Name="Accounts1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Companies" ToRole="Accounts" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
@@ -353,18 +353,6 @@
             </Principal>
             <Dependent Role="Admins">
               <PropertyRef Name="AccountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Companies_Accounts">
-          <End Role="Accounts" Type="Self.Accounts" Multiplicity="1" />
-          <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Accounts">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Companies">
-              <PropertyRef Name="ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -442,10 +430,6 @@
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Admins" EntitySet="Admins" />
           </AssociationSet>
-          <AssociationSet Name="FK_Companies_Accounts" Association="Self.FK_Companies_Accounts">
-            <End Role="Accounts" EntitySet="Accounts" />
-            <End Role="Companies" EntitySet="Companies" />
-          </AssociationSet>
           <AssociationSet Name="FK_Customers_Accounts" Association="Self.FK_Customers_Accounts">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Customers" EntitySet="Customers" />
@@ -470,6 +454,10 @@
             <End Role="AccountTypes" EntitySet="AccountTypes" />
             <End Role="Accounts" EntitySet="Accounts" />
           </AssociationSet>
+          <AssociationSet Name="FK_Companies_Accounts1" Association="OnlineCommerceModel.FK_Companies_Accounts1">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_Accounts_AccountTypes">
           <End Type="OnlineCommerceModel.AccountTypes" Role="AccountTypes" Multiplicity="0..1" />
@@ -480,6 +468,18 @@
             </Principal>
             <Dependent Role="Accounts">
               <PropertyRef Name="AccountTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_Accounts1">
+          <End Type="OnlineCommerceModel.Accounts" Role="Accounts" Multiplicity="0..1" />
+          <End Type="OnlineCommerceModel.Companies" Role="Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="AccountID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
