@@ -13,10 +13,10 @@ namespace OnlineCommerce_Desktop
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OnlineCommerceEntities : DbContext
+    public partial class OnlineCommerceEntities2 : DbContext
     {
-        public OnlineCommerceEntities()
-            : base("name=OnlineCommerceEntities")
+        public OnlineCommerceEntities2()
+            : base("name=OnlineCommerceEntities2")
         {
         }
     

@@ -40,7 +40,7 @@ namespace OnlineCommerce_Desktop
             companies.Fax = txtFax.Text.Trim();
             companies.Address = txtAdres.Text.Trim();
             companies.AccountID = 18;
-            using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
                 if (companies.ID==0)
                     db.Companies.Add(companies);
@@ -58,7 +58,7 @@ namespace OnlineCommerce_Desktop
         void PopulateDataGridView()
         {
             dgvCompanies.AutoGenerateColumns = false;
-            using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
                 dgvCompanies.DataSource = db.Companies.ToList<Companies>();
             }
@@ -78,7 +78,7 @@ namespace OnlineCommerce_Desktop
             if (dgvCompanies.CurrentRow.Index != -1)
             {
                 companies.ID = Convert.ToInt32(dgvCompanies.CurrentRow.Cells["ID"].Value);
-                using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+                using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     companies = db.Companies.Where(x => x.ID == companies.ID).FirstOrDefault();
                     txtName.Text = companies.Name;
@@ -98,7 +98,7 @@ namespace OnlineCommerce_Desktop
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to delete this record ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+                using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     var entry = db.Entry(companies);
                     if (entry.State == System.Data.Entity.EntityState.Detached)

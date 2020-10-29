@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="OnlineCommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="OnlineCommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Accounts">
           <Key>
             <PropertyRef Name="ID" />
@@ -84,6 +84,7 @@
           <Property Name="Stock" Type="decimal" Precision="18" Scale="2" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="CompanyID" Type="int" />
+          <Property Name="Amount" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -119,7 +120,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Companies_Accounts1">
+        <Association Name="FK_Companies_Accounts">
           <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
           <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
           <ReferentialConstraint>
@@ -179,7 +180,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Products_Companies1">
+        <Association Name="FK_Products_Companies">
           <End Role="Companies" Type="Self.Companies" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
@@ -209,7 +210,7 @@
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Admins" EntitySet="Admins" />
           </AssociationSet>
-          <AssociationSet Name="FK_Companies_Accounts1" Association="Self.FK_Companies_Accounts1">
+          <AssociationSet Name="FK_Companies_Accounts" Association="Self.FK_Companies_Accounts">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Companies" EntitySet="Companies" />
           </AssociationSet>
@@ -229,12 +230,13 @@
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_Products_Companies1" Association="Self.FK_Products_Companies1">
+          <AssociationSet Name="FK_Products_Companies" Association="Self.FK_Products_Companies">
             <End Role="Companies" EntitySet="Companies" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OnlineCommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -246,10 +248,10 @@
           <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AccountTypeID" Type="Int32" />
+          <NavigationProperty Name="AccountTypes" Relationship="Self.FK_Accounts_AccountTypes" FromRole="Accounts" ToRole="AccountTypes" />
           <NavigationProperty Name="Admins" Relationship="Self.FK_Admins_Accounts" FromRole="Accounts" ToRole="Admins" />
+          <NavigationProperty Name="Companies" Relationship="Self.FK_Companies_Accounts" FromRole="Accounts" ToRole="Companies" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Accounts" FromRole="Accounts" ToRole="Customers" />
-          <NavigationProperty Name="AccountTypes" Relationship="OnlineCommerceModel.FK_Accounts_AccountTypes" FromRole="Accounts" ToRole="AccountTypes" />
-          <NavigationProperty Name="Companies1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Accounts" ToRole="Companies" />
         </EntityType>
         <EntityType Name="AccountTypes">
           <Key>
@@ -257,7 +259,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Accounts" Relationship="OnlineCommerceModel.FK_Accounts_AccountTypes" FromRole="AccountTypes" ToRole="Accounts" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_Accounts_AccountTypes" FromRole="AccountTypes" ToRole="Accounts" />
         </EntityType>
         <EntityType Name="Admins">
           <Key>
@@ -290,8 +292,8 @@
           <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AccountID" Type="Int32" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_Companies_Accounts" FromRole="Companies" ToRole="Accounts" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Products_Companies" FromRole="Companies" ToRole="Products" />
-          <NavigationProperty Name="Accounts1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Companies" ToRole="Accounts" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
@@ -330,6 +332,7 @@
           <Property Name="Stock" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="CategoryID" Type="Int32" />
           <Property Name="CompanyID" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
           <NavigationProperty Name="Categories" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="Companies" Relationship="Self.FK_Products_Companies" FromRole="Products" ToRole="Companies" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Products" FromRole="Products" ToRole="Orders" />
@@ -344,6 +347,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_Accounts_AccountTypes">
+          <End Role="AccountTypes" Type="Self.AccountTypes" Multiplicity="0..1" />
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountTypes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="AccountTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Admins_Accounts">
           <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
           <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
@@ -352,6 +367,18 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Admins">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_Accounts">
+          <End Role="Accounts" Type="Self.Accounts" Multiplicity="0..1" />
+          <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Companies">
               <PropertyRef Name="AccountID" />
             </Dependent>
           </ReferentialConstraint>
@@ -416,7 +443,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OnlineCommerceEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="OnlineCommerceEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Accounts" />
           <EntitySet Name="AccountTypes" EntityType="Self.AccountTypes" />
           <EntitySet Name="Admins" EntityType="Self.Admins" />
@@ -426,9 +453,17 @@
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="Products" EntityType="Self.Products" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Accounts_AccountTypes" Association="Self.FK_Accounts_AccountTypes">
+            <End Role="AccountTypes" EntitySet="AccountTypes" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
           <AssociationSet Name="FK_Admins_Accounts" Association="Self.FK_Admins_Accounts">
             <End Role="Accounts" EntitySet="Accounts" />
             <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_Accounts" Association="Self.FK_Companies_Accounts">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Companies" EntitySet="Companies" />
           </AssociationSet>
           <AssociationSet Name="FK_Customers_Accounts" Association="Self.FK_Customers_Accounts">
             <End Role="Accounts" EntitySet="Accounts" />
@@ -450,45 +485,13 @@
             <End Role="Products" EntitySet="Products" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Accounts_AccountTypes" Association="OnlineCommerceModel.FK_Accounts_AccountTypes">
-            <End Role="AccountTypes" EntitySet="AccountTypes" />
-            <End Role="Accounts" EntitySet="Accounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Companies_Accounts1" Association="OnlineCommerceModel.FK_Companies_Accounts1">
-            <End Role="Accounts" EntitySet="Accounts" />
-            <End Role="Companies" EntitySet="Companies" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_Accounts_AccountTypes">
-          <End Type="OnlineCommerceModel.AccountTypes" Role="AccountTypes" Multiplicity="0..1" />
-          <End Type="OnlineCommerceModel.Accounts" Role="Accounts" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="AccountTypes">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Accounts">
-              <PropertyRef Name="AccountTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Companies_Accounts1">
-          <End Type="OnlineCommerceModel.Accounts" Role="Accounts" Multiplicity="0..1" />
-          <End Type="OnlineCommerceModel.Companies" Role="Companies" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Accounts">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Companies">
-              <PropertyRef Name="AccountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OnlineCommerceModelStoreContainer" CdmEntityContainer="OnlineCommerceEntities">
+        <EntityContainerMapping StorageEntityContainer="OnlineCommerceModelStoreContainer" CdmEntityContainer="OnlineCommerceEntities2">
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="OnlineCommerceModel.Accounts">
               <MappingFragment StoreEntitySet="Accounts">
@@ -574,6 +577,7 @@
                 <ScalarProperty Name="Stock" ColumnName="Stock" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

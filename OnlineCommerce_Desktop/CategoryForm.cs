@@ -38,7 +38,7 @@ namespace OnlineCommerce_Desktop
         private void btn_Save_Click(object sender, EventArgs e)
         {
             categoryModel.Name = txt_Name.Text.Trim();
-            using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
                 if (categoryModel.ID == 0)
                     db.Categories.Add(categoryModel);
@@ -56,7 +56,7 @@ namespace OnlineCommerce_Desktop
         void PopulateDataGridView()
         {
             dgvCategory.AutoGenerateColumns = false;
-            using(OnlineCommerceEntities db = new OnlineCommerceEntities())
+            using(OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
                 dgvCategory.DataSource = db.Categories.ToList<Categories>();
             }
@@ -67,7 +67,7 @@ namespace OnlineCommerce_Desktop
             if (dgvCategory.CurrentRow.Index != -1)
             {
                 categoryModel.ID = Convert.ToInt32(dgvCategory.CurrentRow.Cells["ID"].Value);
-                using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+                using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     categoryModel = db.Categories.Where(x => x.ID == categoryModel.ID).FirstOrDefault();
                     txt_Name.Text = categoryModel.Name;
@@ -80,7 +80,7 @@ namespace OnlineCommerce_Desktop
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to delete this record ?", "Warning",MessageBoxButtons.YesNo) == DialogResult.Yes)
-                using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+                using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     var entry = db.Entry(categoryModel);
                     if (entry.State == System.Data.Entity.EntityState.Detached)

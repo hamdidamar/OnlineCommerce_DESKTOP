@@ -16,7 +16,7 @@ namespace OnlineCommerce_Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CompaniesForm());
+            Application.Run(new AccountForm());
         }
     }
 }

@@ -11,7 +11,7 @@
     <NavigationProperty Name="Admins" Relationship="Self.FK_Admins_Accounts" FromRole="Accounts" ToRole="Admins" />
     <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Accounts" FromRole="Accounts" ToRole="Customers" />
     <NavigationProperty Name="AccountTypes" Relationship="OnlineCommerceModel.FK_Accounts_AccountTypes" FromRole="Accounts" ToRole="AccountTypes" />
-    <NavigationProperty Name="Companies1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Accounts" ToRole="Companies" />
+    <NavigationProperty Name="Companies" Relationship="OnlineCommerceModel.FK_Companies_Accounts" FromRole="Accounts" ToRole="Companies" />
   </EntityType>
   <EntityType Name="AccountTypes">
     <Key>
@@ -53,7 +53,7 @@
     <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="AccountID" Type="Int32" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Products_Companies" FromRole="Companies" ToRole="Products" />
-    <NavigationProperty Name="Accounts1" Relationship="OnlineCommerceModel.FK_Companies_Accounts1" FromRole="Companies" ToRole="Accounts" />
+    <NavigationProperty Name="Accounts" Relationship="OnlineCommerceModel.FK_Companies_Accounts" FromRole="Companies" ToRole="Accounts" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
@@ -95,6 +95,7 @@
     <NavigationProperty Name="Categories" Relationship="Self.FK_Products_Categories" FromRole="Products" ToRole="Categories" />
     <NavigationProperty Name="Companies" Relationship="Self.FK_Products_Companies" FromRole="Products" ToRole="Companies" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Products" FromRole="Products" ToRole="Orders" />
+    <Property Name="Amount" Type="Int32" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -216,9 +217,9 @@
       <End Role="AccountTypes" EntitySet="AccountTypes" />
       <End Role="Accounts" EntitySet="Accounts" />
     </AssociationSet>
-    <AssociationSet Name="FK_Companies_Accounts1" Association="OnlineCommerceModel.FK_Companies_Accounts1">
-      <End Role="Accounts" EntitySet="Accounts" />
-      <End Role="Companies" EntitySet="Companies" />
+    <AssociationSet Name="FK_Companies_Accounts" Association="OnlineCommerceModel.FK_Companies_Accounts">
+      <End EntitySet="Accounts" Role="Accounts" />
+      <End EntitySet="Companies" Role="Companies" />
     </AssociationSet>
   </EntityContainer>
   <Association Name="FK_Accounts_AccountTypes">
@@ -233,15 +234,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Companies_Accounts1">
-    <End Type="OnlineCommerceModel.Accounts" Role="Accounts" Multiplicity="0..1" />
-    <End Type="OnlineCommerceModel.Companies" Role="Companies" Multiplicity="*" />
+  <Association Name="FK_Companies_Accounts">
+    <End Type="OnlineCommerceModel.Accounts" Multiplicity="1" Role="Accounts" />
+    <End Type="OnlineCommerceModel.Companies" Multiplicity="0..1" Role="Companies" />
     <ReferentialConstraint>
       <Principal Role="Accounts">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Companies">
-        <PropertyRef Name="AccountID" />
+        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

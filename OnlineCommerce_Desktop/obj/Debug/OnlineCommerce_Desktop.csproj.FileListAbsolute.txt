@@ -32,4 +32,7 @@ C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\De
 C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.pdb
 C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.CompaniesForm.resources
 C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.AccountForm.resources
-C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.AdminForm.resources
+C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\bin\Debug\MetroFramework.Design.dll
+C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\bin\Debug\MetroFramework.dll
+C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\doann\Source\Repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.SignUpForm.resources

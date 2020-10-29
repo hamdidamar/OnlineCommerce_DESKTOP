@@ -44,7 +44,7 @@ namespace OnlineCommerce_Desktop
             productModel.Cost = decimal.Parse(txt_Cost.Text.Trim());
             productModel.Price = decimal.Parse(txt_Price.Text.Trim());
             productModel.Stock = decimal.Parse(txt_Stock.Text.Trim());
-            using (OnlineCommerceEntities db = new OnlineCommerceEntities()) 
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2()) 
             {
                 if (productModel.ID == 0)
                     db.Products.Add(productModel);
@@ -62,7 +62,7 @@ namespace OnlineCommerce_Desktop
         void PopulateDataGridView()
         {
             dgvProduct.AutoGenerateColumns = false;
-            using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
                 dgvProduct.DataSource = db.Products.ToList<Products>();
             }
@@ -71,7 +71,7 @@ namespace OnlineCommerce_Desktop
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure to delete this record ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+                using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     var entry = db.Entry(productModel);
                     if (entry.State == System.Data.Entity.EntityState.Detached)
@@ -90,7 +90,7 @@ namespace OnlineCommerce_Desktop
             if (dgvProduct.CurrentRow.Index != -1)
             {
                 productModel.ID = Convert.ToInt32(dgvProduct.CurrentRow.Cells["ID"].Value);
-                using (OnlineCommerceEntities db = new OnlineCommerceEntities())
+                using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     productModel = db.Products.Where(x => x.ID == productModel.ID).FirstOrDefault();
                     txt_Name.Text = productModel.Name;

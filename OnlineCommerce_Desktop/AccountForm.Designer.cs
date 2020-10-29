@@ -28,79 +28,155 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btn_SignIn = new System.Windows.Forms.Button();
-            this.btn_SignUp = new System.Windows.Forms.Button();
+            this.btnSignin = new MetroFramework.Controls.MetroButton();
+            this.btnSignup = new MetroFramework.Controls.MetroButton();
+            this.txtUsername = new MetroFramework.Controls.MetroTextBox();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
+            this.rdbAdmin = new MetroFramework.Controls.MetroRadioButton();
+            this.rdbCompany = new MetroFramework.Controls.MetroRadioButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
-            // label1
+            // btnSignin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username:";
+            this.btnSignin.Location = new System.Drawing.Point(217, 262);
+            this.btnSignin.Name = "btnSignin";
+            this.btnSignin.Size = new System.Drawing.Size(152, 42);
+            this.btnSignin.TabIndex = 0;
+            this.btnSignin.Text = "Sign In";
+            this.btnSignin.UseSelectable = true;
+            this.btnSignin.Click += new System.EventHandler(this.btnSignin_Click);
             // 
-            // label2
+            // btnSignup
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(200, 178);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password";
+            this.btnSignup.Location = new System.Drawing.Point(221, 338);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(148, 42);
+            this.btnSignup.TabIndex = 1;
+            this.btnSignup.Text = "Sign Up";
+            this.btnSignup.UseSelectable = true;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(282, 126);
+            // 
+            // 
+            // 
+            this.txtUsername.CustomButton.Image = null;
+            this.txtUsername.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.txtUsername.CustomButton.Name = "";
+            this.txtUsername.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtUsername.CustomButton.TabIndex = 1;
+            this.txtUsername.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtUsername.CustomButton.UseSelectable = true;
+            this.txtUsername.CustomButton.Visible = false;
+            this.txtUsername.Lines = new string[0];
+            this.txtUsername.Location = new System.Drawing.Point(288, 97);
+            this.txtUsername.MaxLength = 32767;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(156, 20);
+            this.txtUsername.PasswordChar = '\0';
+            this.txtUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtUsername.SelectedText = "";
+            this.txtUsername.SelectionLength = 0;
+            this.txtUsername.SelectionStart = 0;
+            this.txtUsername.ShortcutsEnabled = true;
+            this.txtUsername.Size = new System.Drawing.Size(172, 23);
             this.txtUsername.TabIndex = 2;
+            this.txtUsername.UseSelectable = true;
+            this.txtUsername.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtUsername.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(282, 175);
+            // 
+            // 
+            // 
+            this.txtPassword.CustomButton.Image = null;
+            this.txtPassword.CustomButton.Location = new System.Drawing.Point(150, 1);
+            this.txtPassword.CustomButton.Name = "";
+            this.txtPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtPassword.CustomButton.TabIndex = 1;
+            this.txtPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtPassword.CustomButton.UseSelectable = true;
+            this.txtPassword.CustomButton.Visible = false;
+            this.txtPassword.Lines = new string[0];
+            this.txtPassword.Location = new System.Drawing.Point(288, 149);
+            this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(156, 20);
+            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionLength = 0;
+            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.ShortcutsEnabled = true;
+            this.txtPassword.Size = new System.Drawing.Size(172, 23);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.UseSelectable = true;
+            this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // btn_SignIn
+            // rdbAdmin
             // 
-            this.btn_SignIn.Location = new System.Drawing.Point(223, 233);
-            this.btn_SignIn.Name = "btn_SignIn";
-            this.btn_SignIn.Size = new System.Drawing.Size(75, 23);
-            this.btn_SignIn.TabIndex = 4;
-            this.btn_SignIn.Text = "Sign in";
-            this.btn_SignIn.UseVisualStyleBackColor = true;
-            this.btn_SignIn.Click += new System.EventHandler(this.btn_SignIn_Click);
+            this.rdbAdmin.AutoSize = true;
+            this.rdbAdmin.Location = new System.Drawing.Point(188, 216);
+            this.rdbAdmin.Name = "rdbAdmin";
+            this.rdbAdmin.Size = new System.Drawing.Size(59, 15);
+            this.rdbAdmin.TabIndex = 4;
+            this.rdbAdmin.Text = "Admin";
+            this.rdbAdmin.UseSelectable = true;
+            this.rdbAdmin.CheckedChanged += new System.EventHandler(this.rdbAdmin_CheckedChanged);
             // 
-            // btn_SignUp
+            // rdbCompany
             // 
-            this.btn_SignUp.Location = new System.Drawing.Point(336, 233);
-            this.btn_SignUp.Name = "btn_SignUp";
-            this.btn_SignUp.Size = new System.Drawing.Size(75, 23);
-            this.btn_SignUp.TabIndex = 5;
-            this.btn_SignUp.Text = "Sign up";
-            this.btn_SignUp.UseVisualStyleBackColor = true;
-            this.btn_SignUp.Click += new System.EventHandler(this.btn_SignUp_Click);
+            this.rdbCompany.AutoSize = true;
+            this.rdbCompany.Location = new System.Drawing.Point(325, 216);
+            this.rdbCompany.Name = "rdbCompany";
+            this.rdbCompany.Size = new System.Drawing.Size(75, 15);
+            this.rdbCompany.TabIndex = 5;
+            this.rdbCompany.Text = "Company";
+            this.rdbCompany.UseSelectable = true;
+            this.rdbCompany.CheckedChanged += new System.EventHandler(this.rdbCompany_CheckedChanged);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(139, 97);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(98, 25);
+            this.metroLabel1.TabIndex = 6;
+            this.metroLabel1.Text = "Username :";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel2.Location = new System.Drawing.Point(146, 147);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(91, 25);
+            this.metroLabel2.TabIndex = 7;
+            this.metroLabel2.Text = "Password :";
             // 
             // AccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_SignUp);
-            this.Controls.Add(this.btn_SignIn);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(597, 500);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.rdbCompany);
+            this.Controls.Add(this.rdbAdmin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSignup);
+            this.Controls.Add(this.btnSignin);
             this.Name = "AccountForm";
             this.Text = "AccountForm";
+            this.Load += new System.EventHandler(this.AccountForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,11 +184,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btn_SignIn;
-        private System.Windows.Forms.Button btn_SignUp;
+        private MetroFramework.Controls.MetroButton btnSignin;
+        private MetroFramework.Controls.MetroButton btnSignup;
+        private MetroFramework.Controls.MetroTextBox txtUsername;
+        private MetroFramework.Controls.MetroTextBox txtPassword;
+        private MetroFramework.Controls.MetroRadioButton rdbAdmin;
+        private MetroFramework.Controls.MetroRadioButton rdbCompany;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
