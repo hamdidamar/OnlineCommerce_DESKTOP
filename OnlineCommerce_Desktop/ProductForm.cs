@@ -14,6 +14,8 @@ namespace OnlineCommerce_Desktop
     public partial class ProductForm : Form
     {
         Products productModel = new Products();
+        public int company_id;
+
         public ProductForm()
         {
             InitializeComponent();
@@ -35,23 +37,27 @@ namespace OnlineCommerce_Desktop
         private void Form1_Load(object sender, EventArgs e)
         {
             Clear();
+            PopulateComboBox();
             PopulateDataGridView();
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            OnlineCommerceEntities2 db = new OnlineCommerceEntities2();
+            Categories category = db.Categories.Where(x => x.Name == cmb_Categories.Text).SingleOrDefault();
+            productModel.CategoryID = category.ID;
+            productModel.CompanyID = company_id;
             productModel.Name = txt_Name.Text.Trim();
             productModel.Cost = decimal.Parse(txt_Cost.Text.Trim());
             productModel.Price = decimal.Parse(txt_Price.Text.Trim());
             productModel.Stock = decimal.Parse(txt_Stock.Text.Trim());
-            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2()) 
-            {
-                if (productModel.ID == 0)
-                    db.Products.Add(productModel);
-                else
-                    db.Entry(productModel).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-            }
+
+            if (productModel.ID == 0)
+                db.Products.Add(productModel);
+            else
+                db.Entry(productModel).State = System.Data.Entity.EntityState.Modified;
+
+            db.SaveChanges();
             Clear();
 
             PopulateDataGridView();
@@ -64,7 +70,7 @@ namespace OnlineCommerce_Desktop
             dgvProduct.AutoGenerateColumns = false;
             using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
-                dgvProduct.DataSource = db.Products.ToList<Products>();
+                dgvProduct.DataSource = db.Products.Where(x => x.CompanyID == company_id).ToList<Products>();
             }
         }
 
@@ -97,11 +103,29 @@ namespace OnlineCommerce_Desktop
                     txt_Cost.Text = productModel.Cost.ToString();
                     txt_Price.Text = productModel.Price.ToString();
                     txt_Stock.Text = productModel.Stock.ToString();
+                    /*Categories categories = db.Categories.Where(x => x.ID == productModel.CategoryID).SingleOrDefault();
+                    label6.Text = categories.Name;*/
 
                 }
                 btn_Save.Text = "Update";
                 btn_Delete.Enabled = true;
             }
+        }
+        void PopulateComboBox()
+        {
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
+            {
+                var tempList = (from x in db.Categories
+                           select new
+                                {
+                                    x.ID,
+                                    x.Name
+                                }).ToList();
+                cmb_Categories.DataSource = tempList;
+                cmb_Categories.DisplayMember = "Name";
+                cmb_Categories.ValueMember = "ID";
+            }
+
         }
     }
 }

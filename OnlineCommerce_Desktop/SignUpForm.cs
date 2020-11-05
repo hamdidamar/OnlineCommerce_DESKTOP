@@ -33,6 +33,7 @@ namespace OnlineCommerce_Desktop
                 db.SaveChanges();
             }
             MessageBox.Show("Succsesfully");
+            proForm.company_id = comp.ID;
             proForm.Show();
         }
     }

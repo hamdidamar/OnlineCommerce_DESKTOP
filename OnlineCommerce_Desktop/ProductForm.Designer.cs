@@ -45,15 +45,18 @@
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmb_Categories = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(68, 186);
+            this.btn_Save.Location = new System.Drawing.Point(37, 238);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(56, 19);
+            this.btn_Save.Size = new System.Drawing.Size(56, 29);
             this.btn_Save.TabIndex = 0;
             this.btn_Save.Text = "Save";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -61,10 +64,10 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(140, 186);
+            this.btn_Delete.Location = new System.Drawing.Point(109, 238);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(56, 19);
+            this.btn_Delete.Size = new System.Drawing.Size(56, 29);
             this.btn_Delete.TabIndex = 1;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -72,10 +75,10 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(209, 186);
+            this.btn_Cancel.Location = new System.Drawing.Point(178, 238);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(56, 19);
+            this.btn_Cancel.Size = new System.Drawing.Size(56, 29);
             this.btn_Cancel.TabIndex = 2;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
@@ -96,7 +99,7 @@
             this.txt_Name.Location = new System.Drawing.Point(89, 41);
             this.txt_Name.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(76, 20);
+            this.txt_Name.Size = new System.Drawing.Size(121, 20);
             this.txt_Name.TabIndex = 4;
             // 
             // txt_Cost
@@ -104,7 +107,7 @@
             this.txt_Cost.Location = new System.Drawing.Point(89, 71);
             this.txt_Cost.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Cost.Name = "txt_Cost";
-            this.txt_Cost.Size = new System.Drawing.Size(76, 20);
+            this.txt_Cost.Size = new System.Drawing.Size(121, 20);
             this.txt_Cost.TabIndex = 6;
             // 
             // label2
@@ -122,7 +125,7 @@
             this.txt_Price.Location = new System.Drawing.Point(89, 103);
             this.txt_Price.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Price.Name = "txt_Price";
-            this.txt_Price.Size = new System.Drawing.Size(76, 20);
+            this.txt_Price.Size = new System.Drawing.Size(121, 20);
             this.txt_Price.TabIndex = 8;
             // 
             // label3
@@ -140,7 +143,7 @@
             this.txt_Stock.Location = new System.Drawing.Point(89, 136);
             this.txt_Stock.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Stock.Name = "txt_Stock";
-            this.txt_Stock.Size = new System.Drawing.Size(76, 20);
+            this.txt_Stock.Size = new System.Drawing.Size(121, 20);
             this.txt_Stock.TabIndex = 10;
             // 
             // label4
@@ -217,11 +220,40 @@
             this.Stock.ReadOnly = true;
             this.Stock.Width = 125;
             // 
+            // cmb_Categories
+            // 
+            this.cmb_Categories.FormattingEnabled = true;
+            this.cmb_Categories.Location = new System.Drawing.Point(89, 173);
+            this.cmb_Categories.Name = "cmb_Categories";
+            this.cmb_Categories.Size = new System.Drawing.Size(121, 21);
+            this.cmb_Categories.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(34, 176);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Category :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(106, 317);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "label6";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 394);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmb_Categories);
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.txt_Stock);
             this.Controls.Add(this.label4);
@@ -263,6 +295,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.ComboBox cmb_Categories;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

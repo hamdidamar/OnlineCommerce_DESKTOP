@@ -51,8 +51,7 @@ namespace OnlineCommerce_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Test Admin");
-                    proform.ShowDialog();
+                    compform.ShowDialog();
                 }
             }
             else
@@ -65,8 +64,10 @@ namespace OnlineCommerce_Desktop
                 }
                 else
                 {
-                    MessageBox.Show("Test Company");
-                    compform.ShowDialog();
+                    Companies company = db.Companies.Where(x => x.AccountID == ac.ID).SingleOrDefault();
+
+                    proform.company_id = company.ID;
+                    proform.ShowDialog();
                 }
             }
             
