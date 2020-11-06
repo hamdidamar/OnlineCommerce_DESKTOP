@@ -15,7 +15,7 @@ namespace OnlineCommerce_Desktop
     {
         Products productModel = new Products();
         public int company_id;
-
+        int categoryId = -1;
         public ProductForm()
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace OnlineCommerce_Desktop
         private void btn_Save_Click(object sender, EventArgs e)
         {
             OnlineCommerceEntities2 db = new OnlineCommerceEntities2();
+            
             Categories category = db.Categories.Where(x => x.Name == cmb_Categories.Text).SingleOrDefault();
             productModel.CategoryID = category.ID;
             productModel.CompanyID = company_id;
@@ -71,7 +72,17 @@ namespace OnlineCommerce_Desktop
             using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
             {
                 dgvProduct.DataSource = db.Products.Where(x => x.CompanyID == company_id).ToList<Products>();
+                for (int i = 0; i < dgvProduct.RowCount; i++)
+                {
+                    DataGridViewRow a = new DataGridViewRow();
+                    int tempCategoryID = Convert.ToInt32(dgvProduct.Rows[i].Cells[5].Value);
+                    Categories category = db.Categories.Where(x => x.ID == tempCategoryID).SingleOrDefault();
+                    dgvProduct.Rows[i].Cells[6].Value = category.Name;
+                }
             }
+
+           
+
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -103,12 +114,26 @@ namespace OnlineCommerce_Desktop
                     txt_Cost.Text = productModel.Cost.ToString();
                     txt_Price.Text = productModel.Price.ToString();
                     txt_Stock.Text = productModel.Stock.ToString();
-                    /*Categories categories = db.Categories.Where(x => x.ID == productModel.CategoryID).SingleOrDefault();
+                    categoryId = Convert.ToInt32(productModel.CategoryID);
+
+                    //cmb_Categories.Text = productModel.Categories.Name.ToString();
+                    /*
                     label6.Text = categories.Name;*/
 
                 }
+                CategoryIdControl();
                 btn_Save.Text = "Update";
                 btn_Delete.Enabled = true;
+            }
+        }
+
+        public void CategoryIdControl()
+        {
+            OnlineCommerceEntities2 db = new OnlineCommerceEntities2();
+            if (categoryId != -1)
+            {
+                Categories categories = db.Categories.Where(x => x.ID == productModel.CategoryID).SingleOrDefault();
+                cmb_Categories.Text = categories.Name;
             }
         }
         void PopulateComboBox()
