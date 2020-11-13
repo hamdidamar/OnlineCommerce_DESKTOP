@@ -23,7 +23,8 @@ namespace OnlineCommerce_Desktop
 
         void Clear()
         {
-            txt_Cost.Text = txt_Name.Text = txt_Price.Text = txt_Stock.Text = " " ;
+            txt_Cost.Text = txt_Name.Text = txt_Price.Text = txt_Stock.Text = txt_imageLocation.Text = " " ;
+            image.ImageLocation = null;
             btn_Save.Text = "Save";
             btn_Delete.Enabled = false;
         }
@@ -52,6 +53,7 @@ namespace OnlineCommerce_Desktop
             productModel.Cost = decimal.Parse(txt_Cost.Text.Trim());
             productModel.Price = decimal.Parse(txt_Price.Text.Trim());
             productModel.Stock = decimal.Parse(txt_Stock.Text.Trim());
+            productModel.Image = txt_imageLocation.Text;
 
             if (productModel.ID == 0)
                 db.Products.Add(productModel);
@@ -115,11 +117,8 @@ namespace OnlineCommerce_Desktop
                     txt_Price.Text = productModel.Price.ToString();
                     txt_Stock.Text = productModel.Stock.ToString();
                     categoryId = Convert.ToInt32(productModel.CategoryID);
-
-                    //cmb_Categories.Text = productModel.Categories.Name.ToString();
-                    /*
-                    label6.Text = categories.Name;*/
-
+                    txt_imageLocation.Text = productModel.Image.ToString();
+                    image.ImageLocation = productModel.Image;
                 }
                 CategoryIdControl();
                 btn_Save.Text = "Update";
@@ -152,5 +151,14 @@ namespace OnlineCommerce_Desktop
             }
 
         }
+
+        private void btn_Resim_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+            image.ImageLocation = fileDialog.FileName;
+            txt_imageLocation.Text = fileDialog.FileName;
+        }
+
     }
 }

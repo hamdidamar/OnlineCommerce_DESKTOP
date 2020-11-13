@@ -40,8 +40,6 @@
             this.txt_Stock = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.cmb_Categories = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductsName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,12 +47,19 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmb_Categories = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_imageLocation = new MetroFramework.Controls.MetroTextBox();
+            this.image = new System.Windows.Forms.PictureBox();
+            this.btn_Resim = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(49, 293);
+            this.btn_Save.Location = new System.Drawing.Point(71, 451);
             this.btn_Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(75, 36);
@@ -65,7 +70,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(145, 293);
+            this.btn_Delete.Location = new System.Drawing.Point(167, 451);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(75, 36);
@@ -76,7 +81,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(237, 293);
+            this.btn_Cancel.Location = new System.Drawing.Point(259, 451);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 36);
@@ -170,28 +175,9 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersWidth = 51;
-            this.dgvProduct.Size = new System.Drawing.Size(715, 278);
+            this.dgvProduct.Size = new System.Drawing.Size(715, 322);
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.DoubleClick += new System.EventHandler(this.dgvProduct_DoubleClick);
-            // 
-            // cmb_Categories
-            // 
-            this.cmb_Categories.FormattingEnabled = true;
-            this.cmb_Categories.Location = new System.Drawing.Point(119, 213);
-            this.cmb_Categories.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmb_Categories.Name = "cmb_Categories";
-            this.cmb_Categories.Size = new System.Drawing.Size(160, 24);
-            this.cmb_Categories.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 217);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Category :";
             // 
             // ID
             // 
@@ -257,11 +243,97 @@
             this.Category.ReadOnly = true;
             this.Category.Width = 125;
             // 
+            // cmb_Categories
+            // 
+            this.cmb_Categories.FormattingEnabled = true;
+            this.cmb_Categories.Location = new System.Drawing.Point(119, 213);
+            this.cmb_Categories.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_Categories.Name = "cmb_Categories";
+            this.cmb_Categories.Size = new System.Drawing.Size(160, 24);
+            this.cmb_Categories.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(45, 217);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Category :";
+            // 
+            // txt_imageLocation
+            // 
+            // 
+            // 
+            // 
+            this.txt_imageLocation.CustomButton.Image = null;
+            this.txt_imageLocation.CustomButton.Location = new System.Drawing.Point(138, 1);
+            this.txt_imageLocation.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_imageLocation.CustomButton.Name = "";
+            this.txt_imageLocation.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txt_imageLocation.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_imageLocation.CustomButton.TabIndex = 1;
+            this.txt_imageLocation.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_imageLocation.CustomButton.UseSelectable = true;
+            this.txt_imageLocation.CustomButton.Visible = false;
+            this.txt_imageLocation.Lines = new string[0];
+            this.txt_imageLocation.Location = new System.Drawing.Point(119, 254);
+            this.txt_imageLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_imageLocation.MaxLength = 32767;
+            this.txt_imageLocation.Name = "txt_imageLocation";
+            this.txt_imageLocation.PasswordChar = '\0';
+            this.txt_imageLocation.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_imageLocation.SelectedText = "";
+            this.txt_imageLocation.SelectionLength = 0;
+            this.txt_imageLocation.SelectionStart = 0;
+            this.txt_imageLocation.ShortcutsEnabled = true;
+            this.txt_imageLocation.Size = new System.Drawing.Size(160, 23);
+            this.txt_imageLocation.TabIndex = 45;
+            this.txt_imageLocation.UseSelectable = true;
+            this.txt_imageLocation.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txt_imageLocation.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // image
+            // 
+            this.image.Location = new System.Drawing.Point(102, 298);
+            this.image.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.image.Name = "image";
+            this.image.Size = new System.Drawing.Size(177, 118);
+            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.image.TabIndex = 44;
+            this.image.TabStop = false;
+            // 
+            // btn_Resim
+            // 
+            this.btn_Resim.Location = new System.Drawing.Point(295, 249);
+            this.btn_Resim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Resim.Name = "btn_Resim";
+            this.btn_Resim.Size = new System.Drawing.Size(39, 28);
+            this.btn_Resim.TabIndex = 43;
+            this.btn_Resim.Text = "---";
+            this.btn_Resim.UseVisualStyleBackColor = true;
+            this.btn_Resim.Click += new System.EventHandler(this.btn_Resim_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 254);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 17);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "İmage Location :";
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 485);
+            this.ClientSize = new System.Drawing.Size(1187, 520);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txt_imageLocation);
+            this.Controls.Add(this.image);
+            this.Controls.Add(this.btn_Resim);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmb_Categories);
             this.Controls.Add(this.dgvProduct);
@@ -281,6 +353,7 @@
             this.Text = "Product Form";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,6 +382,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private MetroFramework.Controls.MetroTextBox txt_imageLocation;
+        private System.Windows.Forms.PictureBox image;
+        private System.Windows.Forms.Button btn_Resim;
+        private System.Windows.Forms.Label label6;
     }
 }
 

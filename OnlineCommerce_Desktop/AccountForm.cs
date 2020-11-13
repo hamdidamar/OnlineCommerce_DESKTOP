@@ -51,7 +51,8 @@ namespace OnlineCommerce_Desktop
                 }
                 else
                 {
-                    compform.ShowDialog();
+                    AdminForm admin = new AdminForm();
+                    admin.ShowDialog();
                 }
             }
             else

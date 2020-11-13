@@ -58,3 +58,4 @@ C:\Users\cihan\source\repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\De
 C:\Users\cihan\source\repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.csproj.CopyComplete
 C:\Users\cihan\source\repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.exe
 C:\Users\cihan\source\repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.pdb
+C:\Users\cihan\source\repos\OnlineCommerce_DESKTOP\OnlineCommerce_Desktop\obj\Debug\OnlineCommerce_Desktop.AdminForm.resources
