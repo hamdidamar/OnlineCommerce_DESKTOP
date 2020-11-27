@@ -114,7 +114,14 @@ namespace OnlineCommerce_Desktop
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            companies.ID = 0;
             Clear();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

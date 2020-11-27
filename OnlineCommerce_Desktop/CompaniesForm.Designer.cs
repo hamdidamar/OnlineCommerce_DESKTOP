@@ -42,20 +42,22 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.dgvCompanies = new System.Windows.Forms.DataGridView();
-            this.lblid = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblid = new System.Windows.Forms.Label();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanies)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(139, 466);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSave.Location = new System.Drawing.Point(139, 449);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 0;
@@ -66,7 +68,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 112);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(31, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 17);
@@ -76,7 +79,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 158);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(27, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 17);
@@ -86,7 +90,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 287);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(27, 270);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
@@ -96,7 +101,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 245);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(40, 228);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 17);
@@ -106,7 +112,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 203);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(37, 186);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 17);
@@ -115,49 +122,50 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(104, 108);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Location = new System.Drawing.Point(104, 91);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(449, 22);
+            this.txtName.Size = new System.Drawing.Size(269, 22);
             this.txtName.TabIndex = 7;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(104, 154);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhone.Location = new System.Drawing.Point(104, 137);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(269, 22);
             this.txtPhone.TabIndex = 8;
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(104, 199);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Location = new System.Drawing.Point(104, 182);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(449, 22);
+            this.txtMail.Size = new System.Drawing.Size(269, 22);
             this.txtMail.TabIndex = 9;
             // 
             // txtAdres
             // 
-            this.txtAdres.Location = new System.Drawing.Point(104, 283);
-            this.txtAdres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAdres.Location = new System.Drawing.Point(104, 266);
+            this.txtAdres.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdres.Multiline = true;
             this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(449, 112);
+            this.txtAdres.Size = new System.Drawing.Size(269, 112);
             this.txtAdres.TabIndex = 10;
             // 
             // txtFax
             // 
-            this.txtFax.Location = new System.Drawing.Point(104, 241);
-            this.txtFax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFax.Location = new System.Drawing.Point(104, 224);
+            this.txtFax.Margin = new System.Windows.Forms.Padding(4);
             this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(449, 22);
+            this.txtFax.Size = new System.Drawing.Size(269, 22);
             this.txtFax.TabIndex = 11;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(283, 466);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelete.Location = new System.Drawing.Point(283, 449);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 12;
@@ -167,8 +175,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(421, 466);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancel.Location = new System.Drawing.Point(421, 449);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 13;
@@ -187,23 +196,14 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvCompanies.Location = new System.Drawing.Point(583, 86);
-            this.dgvCompanies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCompanies.Location = new System.Drawing.Point(421, 76);
+            this.dgvCompanies.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCompanies.Name = "dgvCompanies";
             this.dgvCompanies.ReadOnly = true;
             this.dgvCompanies.RowHeadersWidth = 51;
             this.dgvCompanies.Size = new System.Drawing.Size(853, 342);
             this.dgvCompanies.TabIndex = 14;
             this.dgvCompanies.DoubleClick += new System.EventHandler(this.dgvCompanies_DoubleClick);
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(895, 478);
-            this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(0, 17);
-            this.lblid.TabIndex = 15;
             // 
             // ID
             // 
@@ -260,11 +260,33 @@
             this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(895, 461);
+            this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(0, 17);
+            this.lblid.TabIndex = 15;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackgroundImage = global::OnlineCommerce_Desktop.Properties.Resources.icons8_close_window_26px_1;
+            this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroButton1.Location = new System.Drawing.Point(1294, 3);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(45, 32);
+            this.metroButton1.TabIndex = 18;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // CompaniesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 633);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(1341, 633);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.dgvCompanies);
             this.Controls.Add(this.btnCancel);
@@ -280,7 +302,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Text = "CompaniesForm";
             this.Load += new System.EventHandler(this.CompaniesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanies)).EndInit();
@@ -312,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

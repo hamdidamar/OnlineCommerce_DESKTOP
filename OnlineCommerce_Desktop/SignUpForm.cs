@@ -36,5 +36,10 @@ namespace OnlineCommerce_Desktop
             proForm.company_id = comp.ID;
             proForm.Show();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

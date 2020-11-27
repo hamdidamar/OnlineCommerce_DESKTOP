@@ -95,5 +95,10 @@ namespace OnlineCommerce_Desktop
                 signUpfrm.Show();
             }
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

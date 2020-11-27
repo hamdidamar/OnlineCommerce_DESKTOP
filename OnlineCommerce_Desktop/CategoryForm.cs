@@ -30,28 +30,7 @@ namespace OnlineCommerce_Desktop
             btn_Delete.Enabled = false;
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
 
-        private void btn_Save_Click(object sender, EventArgs e)
-        {
-            categoryModel.Name = txt_Name.Text.Trim();
-            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
-            {
-                if (categoryModel.ID == 0)
-                    db.Categories.Add(categoryModel);
-                else
-                    db.Entry(categoryModel).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-            }
-            Clear();
-            PopulateDataGridView();
-            categoryModel.ID = 0;
-            MessageBox.Show("Succesfully");
-
-        }
 
         void PopulateDataGridView()
         {
@@ -77,9 +56,13 @@ namespace OnlineCommerce_Desktop
             }
         }
 
+        
+
+       
+
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to delete this record ?", "Warning",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure to delete this record ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
                 {
                     var entry = db.Entry(categoryModel);
@@ -92,7 +75,35 @@ namespace OnlineCommerce_Desktop
                     categoryModel.ID = 0;
                     MessageBox.Show("Deleted succesfully.");
                 }
-            
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            categoryModel.Name = txt_Name.Text.Trim();
+            using (OnlineCommerceEntities2 db = new OnlineCommerceEntities2())
+            {
+                if (categoryModel.ID == 0)
+                    db.Categories.Add(categoryModel);
+                else
+                    db.Entry(categoryModel).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            Clear();
+            PopulateDataGridView();
+            categoryModel.ID = 0;
+            MessageBox.Show("Succesfully");
+
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            categoryModel.ID = 0;
+            Clear();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

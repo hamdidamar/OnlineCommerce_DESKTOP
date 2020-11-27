@@ -160,5 +160,9 @@ namespace OnlineCommerce_Desktop
             txt_imageLocation.Text = fileDialog.FileName;
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

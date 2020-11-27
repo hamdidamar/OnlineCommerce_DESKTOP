@@ -28,5 +28,10 @@ namespace OnlineCommerce_Desktop
             CompaniesForm compForm = new CompaniesForm();
             compForm.ShowDialog();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
